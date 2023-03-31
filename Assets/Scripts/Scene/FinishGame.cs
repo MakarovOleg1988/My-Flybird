@@ -4,53 +4,49 @@ using UnityEngine.SceneManagement;
 
 namespace MyFlyBird
 {
-    public class FinishGame : MonoBehaviour
+    public class FinishGame : MonoBehaviour, IEventAssistant
     {
-        FinalScore _finalScore = new FinalScore();
-
-        [SerializeField] public GameObject _LoseMenu;
-        [SerializeField] private bool _timerstop;
-
-        public bool Timerstop
-        {
-            get { return _timerstop; }
-            set { _timerstop = value; }
-        }
+        [SerializeField] private GameObject _winMenu;
+        [SerializeField] private GameObject _loseMenu;
+        [HideInInspector] public GameObject _player;
 
         private void Start()
         {
-            IEventAssistant._onSetDamage += EndGame;
+            _player = GameObject.FindGameObjectWithTag("Player");
+            IEventAssistant._onSetDamage += LoseLevel;
+            IEventAssistant._onSetHoldOut += WinLevel;
         }
 
-        private void EndGame()
+        private void WinLevel()
         {
-            StartCoroutine(CoroutineFinishGame());
-            _finalScore.Timerstop = true;
+            StartCoroutine(CoroutineWinLevel());
         }
 
-        private IEnumerator CoroutineFinishGame()
+        private IEnumerator CoroutineWinLevel()
         {
-            _LoseMenu.SetActive(true);
+            _winMenu.SetActive(true);
+            _player.SetActive(false);
+            yield return new WaitForSeconds(2f);
+        }
+
+        private void LoseLevel()
+        {
+            StartCoroutine(CoroutineLoseLevel());
+        }
+
+        private IEnumerator CoroutineLoseLevel()
+        {
+            _player.SetActive(false);
+            _loseMenu.SetActive(true);
+
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Main Menu");
         }
 
         private void OnDestroy()
         {
-            IEventAssistant._onSetDamage -= EndGame;
-        }
-    }
-
-    public class FinalScore
-    {
-        private bool _timerstop;
-
-        public bool Timerstop
-        {
-            get
-            { return _timerstop; }
-            set
-            { _timerstop = value; }
+            IEventAssistant._onSetDamage -= LoseLevel;
+            IEventAssistant._onSetHoldOut -= WinLevel;
         }
     }
 }

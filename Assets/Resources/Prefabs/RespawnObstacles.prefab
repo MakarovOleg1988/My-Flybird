@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &551536726012660995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 551536726012660994}
+  - component: {fileID: 551536726012660997}
+  m_Layer: 0
+  m_Name: RespawnObstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &551536726012660994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551536726012660995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551536726012660997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551536726012660995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d13ad9cfc066a4bbab1cf9de545cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _walls:
+  - {fileID: 6372533616400898293, guid: 815492bdc0319f642a94c0e97d2e2783, type: 3}
+  - {fileID: 6372533616400898293, guid: bb56aad663f16814d8b8d28a7d8a639a, type: 3}
+  - {fileID: 2702679428132942429, guid: a64127ba10f871642bfe64196147caa8, type: 3}
+  - {fileID: 2702679428132942429, guid: 55b3be812dfa32144a30ec1f75c3a5d7, type: 3}
+  - {fileID: 2702679428132942429, guid: fb27c82fcee3a6f4aa7c928e952782f2, type: 3}
+  - {fileID: 8709438985888646984, guid: 6c94be6bd987b124490fb5e0a49606fd, type: 3}
+  - {fileID: 6372533616400898293, guid: ada04d0a0ede2fd41ba2325ed9829625, type: 3}
+  - {fileID: 2702679428132942429, guid: 58a8a222a98e3b045ba5fbf708c35fda, type: 3}
+  _startPoint: {fileID: 551536726012660994}
+  _timeBetweenShots: 2
+  _startTimeShoot: 2
+  _timeBetweenBustForce: 20
+  _bustSpeedSpawn: 0.2

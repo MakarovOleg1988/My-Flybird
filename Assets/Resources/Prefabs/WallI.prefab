@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeedObstacles: 4
+  _timeToDestroy: 25
 --- !u!1 &7384937332555754009
 GameObject:
   m_ObjectHideFlags: 0

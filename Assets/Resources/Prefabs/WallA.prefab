@@ -692,3 +692,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeedObstacles: 4
+  _timeToDestroy: 25

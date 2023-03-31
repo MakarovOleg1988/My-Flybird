@@ -8,31 +8,25 @@ namespace MyFlyBird
     {
         [SerializeField] private GameObject _mainMenu;
         [SerializeField] private GameObject _menuChooseDifficulty;
-        private void Start()
+        [SerializeField] private GameObject _menuChoosePerson;
+        private int _chooseAvatar;
+
+        public void ChoosePerson()
         {
-            IEventAssistant._onSetButton += QuitLevel;
-            IEventAssistant._onSetButton += BackToMainMenu;
-            IEventAssistant._onSetButton += ChooseDifficulty;
-            IEventAssistant._onSetButton += StartLevel1;
-            IEventAssistant._onSetButton += StartLevel2;
-            IEventAssistant._onSetButton += StartLevel3;
-            IEventAssistant._onSetButton += QuitGame;
+            IEventAssistant.SendSetButton();
+            StartCoroutine(CoroutineChoosePerson());
         }
 
-        public void ChooseDifficulty()
-        {
-            StartCoroutine(CoroutineChooseDifficulty());
-        }
-
-        private IEnumerator CoroutineChooseDifficulty()
+        private IEnumerator CoroutineChoosePerson()
         {
             yield return new WaitForSeconds(0.2f);
             _mainMenu.SetActive(false);
-            _menuChooseDifficulty.SetActive(true);
+            _menuChoosePerson.SetActive(true);
         }
 
         public void StartLevel1()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineStartLevel1());
         }
 
@@ -44,6 +38,7 @@ namespace MyFlyBird
 
         public void StartLevel2()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineStartLevel2());
         }
 
@@ -55,6 +50,7 @@ namespace MyFlyBird
 
         public void StartLevel3()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineStartLevel3());
         }
 
@@ -66,6 +62,7 @@ namespace MyFlyBird
 
         public void BackToMainMenu()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineBackToMainMenu());
         }
 
@@ -73,11 +70,25 @@ namespace MyFlyBird
         {
             yield return new WaitForSeconds(0.2f);
             _mainMenu.SetActive(true);
+            _menuChoosePerson.SetActive(false);
             _menuChooseDifficulty.SetActive(false);
+        }
+
+        public void SetNextLevel()
+        {
+            IEventAssistant.SendSetButton();
+            StartCoroutine(CoroutineSetNextLevel());
+        }
+
+        private IEnumerator CoroutineSetNextLevel()
+        {
+            yield return new WaitForSeconds(0.2f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         public void QuitLevel()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineQuitLevel());
         }
 
@@ -89,6 +100,7 @@ namespace MyFlyBird
 
         public void QuitGame()
         {
+            IEventAssistant.SendSetButton();
             StartCoroutine(CoroutineQuitGame());
         }
 
@@ -100,6 +112,36 @@ namespace MyFlyBird
 #elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
             Application.Quit();
 #endif
+        }
+
+        public void ChooseBlueBird()
+        {
+            IEventAssistant.SendSetButton();
+            StartCoroutine(CoroutineChooseBlueBird());
+        }
+
+        private IEnumerator CoroutineChooseBlueBird()
+        {
+            yield return new WaitForSeconds(0.2f);
+            PlayerPrefs.SetInt("_chooseAvatar", 1);
+            PlayerPrefs.Save();
+            _menuChoosePerson.SetActive(false);
+            _menuChooseDifficulty.SetActive(true);
+        }
+
+        public void ChoosePinkBird()
+        {
+            IEventAssistant.SendSetButton();
+            StartCoroutine(CoroutineChoosePinkBird());
+        }
+
+        private IEnumerator CoroutineChoosePinkBird()
+        {
+            yield return new WaitForSeconds(0.2f);
+            PlayerPrefs.SetInt("_chooseAvatar", 2);
+            PlayerPrefs.Save();
+            _menuChoosePerson.SetActive(false);
+            _menuChooseDifficulty.SetActive(true);
         }
     }
 }

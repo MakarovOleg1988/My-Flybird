@@ -3,15 +3,8 @@ using UnityEngine;
 
 namespace MyFlyBird
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : PlayerParam
     {
-        private NewControls _controls;
-        [SerializeField] private Rigidbody2D _rbPlayer;
-
-        [Space, SerializeField, Range(1f, 20f)] private float _jumpForce;
-        [SerializeField, Range(1f, 15f)] private float _timeBetweenBustForce;
-        [SerializeField, Range(1f, 4f)] private float _bustForce;
-
         private void Awake()
         {
             NewControls _controls = new NewControls();
@@ -20,9 +13,10 @@ namespace MyFlyBird
 
         private void Start()
         {
+            _playerAvatar = GetComponent<SpriteRenderer>();
             _rbPlayer = GetComponent<Rigidbody2D>();
 
-            StartCoroutine(bustingJumpForce());
+            ChooseBird();
         }
 
         private void Update()
@@ -30,17 +24,33 @@ namespace MyFlyBird
             Jump();
         }
 
-        private void Jump()
+        private void ChooseBird()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) _rbPlayer.AddForce(transform.up * (_jumpForce + _bustForce), ForceMode2D.Impulse);
+            if (PlayerPrefs.GetInt("_chooseAvatar") == 1) _playerAvatar.sprite = _blueBirdImage;
+            else if (PlayerPrefs.GetInt("_chooseAvatar") == 2) _playerAvatar.sprite = _pinkBirdImage;
         }
 
-        private IEnumerator bustingJumpForce()
+        private void Jump()
         {
-            while (true)
+            if (Input.GetKeyDown(KeyCode.Space)) StartCoroutine(coroutineJump());
+        }
+
+        private IEnumerator coroutineJump()
+        {
+            if (PlayerPrefs.GetInt("_chooseAvatar") == 1)
             {
-                _bustForce = _bustForce + 1;
-                yield return new WaitForSeconds(_timeBetweenBustForce);
+                _rbPlayer.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
+                _playerAvatar.sprite = _blueBirdImageDown;
+                yield return new WaitForSeconds(0.2f);
+                _playerAvatar.sprite = _blueBirdImage;
+            }
+
+            if (PlayerPrefs.GetInt("_chooseAvatar") == 2)
+            {
+                _rbPlayer.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
+                _playerAvatar.sprite = _pinkBirdImageDown;
+                yield return new WaitForSeconds(0.2f);
+                _playerAvatar.sprite = _pinkBirdImage;
             }
         }
     }
