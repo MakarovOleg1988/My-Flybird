@@ -5,9 +5,9 @@ namespace MyFlyBird
 {
     public class RespawnObstacles : ObstaclesParam
     {
-
         private void Start()
         {
+            _startPoint = GetComponent<Transform>();
             StartCoroutine(CoroutineBust(_bustSpeedSpawn));
         }
 

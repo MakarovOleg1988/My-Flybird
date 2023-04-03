@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &1905724658528596670
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &2702679428132942429
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &8805753194516736360
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,3 +574,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0

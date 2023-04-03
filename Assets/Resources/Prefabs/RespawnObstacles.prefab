@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551536726012660994}
-  - component: {fileID: 551536726012660997}
+  - component: {fileID: 9199414046192633879}
   m_Layer: 0
   m_Name: RespawnObstacles
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &551536726012660997
+--- !u!114 &9199414046192633879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,8 +53,8 @@ MonoBehaviour:
   - {fileID: 8709438985888646984, guid: 6c94be6bd987b124490fb5e0a49606fd, type: 3}
   - {fileID: 6372533616400898293, guid: ada04d0a0ede2fd41ba2325ed9829625, type: 3}
   - {fileID: 2702679428132942429, guid: 58a8a222a98e3b045ba5fbf708c35fda, type: 3}
-  _startPoint: {fileID: 551536726012660994}
-  _timeBetweenShots: 2
-  _startTimeShoot: 2
+  - {fileID: 8709438985888646984, guid: c8d853233c760b44bbc852d1edd8b7e0, type: 3}
+  _timeBetweenShots: 3
+  _startTimeShoot: 3
   _timeBetweenBustForce: 20
-  _bustSpeedSpawn: 0.2
+  _bustSpeedSpawn: 0.1

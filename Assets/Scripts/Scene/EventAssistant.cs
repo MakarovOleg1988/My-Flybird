@@ -7,10 +7,16 @@ namespace MyFlyBird
         public static event Action _onSetDamage;
         public static event Action _onSetButton;
         public static event Action _onSetHoldOut;
+        public static event Action _onSetFruits;
 
         public static void SendSetDamage()
         {
             _onSetDamage?.Invoke();
+        }
+
+        public static void SendSetFruits()
+        {
+            _onSetFruits?.Invoke();
         }
 
         public static void SendHoldOut()

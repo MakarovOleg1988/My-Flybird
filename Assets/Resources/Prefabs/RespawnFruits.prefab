@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8472502718229641934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8472502718229641935}
+  - component: {fileID: 8472502718229641937}
+  m_Layer: 0
+  m_Name: RespawnFruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8472502718229641935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472502718229641934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8472502718229641937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472502718229641934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3970df2a0122e0a43a8196c12aada476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fruits:
+  - {fileID: 5393738016036258724, guid: d9cc7e07d6c75a4428c6968733f5e9ed, type: 3}
+  - {fileID: 3238758212368676910, guid: eea96c027d036ce40a2487a65ccde96a, type: 3}
+  - {fileID: 134672963516700728, guid: cbd13ac3ac334584c8612e030e106f10, type: 3}
+  - {fileID: 5396293782508772582, guid: a03807916b63c5f499467a681398f6f4, type: 3}
+  _startPoint: {fileID: 0}
+  _timeBetweenShots: 4
+  _startTimeShoot: 4

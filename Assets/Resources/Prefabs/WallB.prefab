@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &2080093448619387151
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &3201358717967164847
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &4777688379338603792
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &5116327020471484094
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c76fe2c1f2d134aaf4d11b2196292d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDamage: 1
+  _isFruit: 0
 --- !u!1 &6372533616400898293
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ namespace MyFlyBird
             }
             else
             {
-                _rectTransformTimer.anchoredPosition = new Vector2(m_XAxis, m_YAxis);
+                //_rectTransformTimer.anchoredPosition = new Vector2(m_XAxis, m_YAxis);
                 IEventAssistant.SendHoldOut();
             }
         }

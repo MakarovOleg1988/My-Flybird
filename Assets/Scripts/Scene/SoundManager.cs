@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace MyFlyBird
@@ -6,11 +7,18 @@ namespace MyFlyBird
     {
         [SerializeField] private AudioSource _audioSourceLoseGame;
         [SerializeField] private AudioSource _audioSourceClickButton;
+        [SerializeField] private AudioSource _audioSourceBiteFruits;
 
         private void Start()
         {
             IEventAssistant._onSetDamage += SetSoundEndGame;
             IEventAssistant._onSetButton += SetSoundButton;
+            IEventAssistant._onSetFruits += SetSoundBite;
+        }
+
+        private void SetSoundBite()
+        {
+            _audioSourceBiteFruits.Play();
         }
 
         private void SetSoundEndGame()
@@ -27,6 +35,7 @@ namespace MyFlyBird
         {
             IEventAssistant._onSetDamage -= SetSoundEndGame;
             IEventAssistant._onSetButton -= SetSoundButton;
+            IEventAssistant._onSetFruits -= SetSoundBite;
         }
     }
 }

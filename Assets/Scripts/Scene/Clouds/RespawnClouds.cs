@@ -5,9 +5,14 @@ namespace MyFlyBird
     public class RespawnClouds : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer[] _clouds;
-        [SerializeField] public Transform _startPoint;
+        [HideInInspector] public Transform _startPoint;
         [SerializeField] private float _timeBetweenShots;
         [SerializeField] private float _startTimeShoot;
+
+        private void Start()
+        {
+            _startPoint = GetComponent<Transform>();
+        }
 
         private void Update()
         {
@@ -18,7 +23,7 @@ namespace MyFlyBird
         {
             if (_timeBetweenShots <= 0)
             {
-                int chooseClouds = Random.Range(0, 3);
+                int chooseClouds = Random.Range(0, _clouds.Length - 1);
                 SpriteRenderer cloud = Instantiate(_clouds[chooseClouds], _startPoint.position + new Vector3(0f, Random.Range(-4f, 4f), 0f), Quaternion.identity);
                 cloud.transform.parent = transform;
                 _timeBetweenShots = _startTimeShoot;
