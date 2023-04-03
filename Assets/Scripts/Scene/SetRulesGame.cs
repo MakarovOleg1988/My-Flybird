@@ -63,6 +63,7 @@ namespace MyFlyBird
         {
             IEventAssistant._onSetDamage -= LoseLevel;
             IEventAssistant._onSetHoldOut -= WinLevel;
+            IEventAssistant._onSetFruits -= GetFruits;
         }
     }
 }
