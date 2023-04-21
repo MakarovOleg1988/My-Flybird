@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Image Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: dbb8ab3114ed7cf49b8213a6c033e524, type: 3}
+    - {fileID: 2800000, guid: 938efd28096017d47a8bd923c7c45dfd, type: 3}
+    - {fileID: 2800000, guid: 5644af2d331f94445a6d629be608c08d, type: 3}
+    - {fileID: 2800000, guid: bd8a70fcb3ffd1549a70cee12ac132b8, type: 3}
+    - {fileID: 2800000, guid: 1fd26ad1a12d16d42b54f467d2b75f35, type: 3}
+    - {fileID: 2800000, guid: 7ec02f45013487642a7092e25da422f6, type: 3}
+    - {fileID: 2800000, guid: aa5430b0e4fc2fb429f4e4634fa437de, type: 3}
+    - {fileID: 2800000, guid: 8e416b2c4ba0c5843bd4173a046442b3, type: 3}
+    - {fileID: 2800000, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: aa5430b0e4fc2fb429f4e4634fa437de, type: 3}
+  - {fileID: 21300000, guid: dbb8ab3114ed7cf49b8213a6c033e524, type: 3}
+  - {fileID: 21300000, guid: 1fd26ad1a12d16d42b54f467d2b75f35, type: 3}
+  - {fileID: 21300000, guid: 7ec02f45013487642a7092e25da422f6, type: 3}
+  - {fileID: 910493619, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+  - {fileID: 1928331275, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+  - {fileID: 1001644848, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+  - {fileID: 632248120, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+  - {fileID: 160808853, guid: 1dc62908f7ed6bf4bb323f417d04cbac, type: 3}
+  - {fileID: 21300000, guid: 938efd28096017d47a8bd923c7c45dfd, type: 3}
+  - {fileID: 21300000, guid: 8e416b2c4ba0c5843bd4173a046442b3, type: 3}
+  - {fileID: 21300000, guid: bd8a70fcb3ffd1549a70cee12ac132b8, type: 3}
+  - {fileID: 21300000, guid: 5644af2d331f94445a6d629be608c08d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Flappy Bird
+  - Background forest
+  - Wall128
+  - Flappy Bird Logo
+  - Clouds_0
+  - Clouds_1
+  - Clouds_2
+  - Clouds_3
+  - Clouds_4
+  - Background City
+  - Time Icon
+  - Background City 2
+  - Background City 3
+  m_RenderDataMap: {}
+  m_Tag: Image Sprite Atlas
+  m_IsVariant: 0

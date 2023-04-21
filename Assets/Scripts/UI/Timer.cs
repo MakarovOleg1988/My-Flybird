@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace MyFlyBird
 {
@@ -7,20 +7,13 @@ namespace MyFlyBird
     {
         [SerializeField] 
         private float _startTime = 180f;
-
-        private float m_XAxis, m_YAxis;
-
-        [Space, SerializeField] 
-        private RectTransform _rectTransformTimer;
         
         [SerializeField] 
-        public Text _timer;
+        public TextMeshProUGUI _timer;
 
         private void Start()
         {
             _timer.text = _startTime.ToString("F1");
-            m_XAxis = 0.5f;
-            m_YAxis = 0.5f;
         }
 
         private void Update()
@@ -32,7 +25,6 @@ namespace MyFlyBird
             }
             else
             {
-                //_rectTransformTimer.anchoredPosition = new Vector2(m_XAxis, m_YAxis);
                 IEventAssistant.SendHoldOut();
             }
         }
