@@ -4,8 +4,11 @@ namespace MyFlyBird
 {
     public class TriggerManager : MonoBehaviour, IEventAssistant
     {
-        [SerializeField] private bool _isDamage;
-        [SerializeField] private bool _isFruit;
+        [SerializeField] 
+        private bool _isDamage;
+        
+        [SerializeField] 
+        private bool _isFruit;
 
         public void OnTriggerEnter2D(Collider2D other)
         {

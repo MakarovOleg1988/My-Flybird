@@ -4,10 +4,17 @@ namespace MyFlyBird
 {
     public class RespawnClouds : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer[] _clouds;
-        [HideInInspector] public Transform _startPoint;
-        [SerializeField] private float _timeBetweenShots;
-        [SerializeField] private float _startTimeShoot;
+        [SerializeField] 
+        private SpriteRenderer[] _clouds;
+        
+        [HideInInspector] 
+        public Transform _startPoint;
+        
+        [SerializeField] 
+        private float _timeBetweenShots;
+        
+        [SerializeField] 
+        private float _startTimeShoot;
 
         private void Start()
         {

@@ -7,8 +7,11 @@ namespace MyFlyBird
     {
         private Rigidbody2D _rbClouds;
 
-        [Space, SerializeField] private float _moveSpeedClouds;
-        [SerializeField] private float _timeToDestroy = 25f;
+        [Space, SerializeField] 
+        private float _moveSpeedClouds;
+        
+        [SerializeField] 
+        private float _timeToDestroy = 25f;
 
         private void Start()
         {

@@ -5,11 +5,16 @@ namespace MyFlyBird
 {
     public class Timer : MonoBehaviour
     {
-        [SerializeField] private float _startTime = 180f;
+        [SerializeField] 
+        private float _startTime = 180f;
+
         private float m_XAxis, m_YAxis;
 
-        [Space, SerializeField] private RectTransform _rectTransformTimer;
-        [SerializeField] public Text _timer;
+        [Space, SerializeField] 
+        private RectTransform _rectTransformTimer;
+        
+        [SerializeField] 
+        public Text _timer;
 
         private void Start()
         {

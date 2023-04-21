@@ -7,10 +7,18 @@ namespace MyFlyBird
 {
     public class SetRulesGame : MonoBehaviour, IEventAssistant
     {
-        [SerializeField] private GameObject _winMenu;
-        [SerializeField] private GameObject _loseMenu;
-        [HideInInspector] public GameObject _player;
-        [SerializeField] private Text _textFruits;
+        [SerializeField] 
+        private GameObject _winMenu;
+        
+        [SerializeField] 
+        private GameObject _loseMenu;
+        
+        [HideInInspector] 
+        public GameObject _player;
+        
+        [SerializeField] 
+        private Text _textFruits;
+        
         private int _valueFruits;
 
         private void Start()

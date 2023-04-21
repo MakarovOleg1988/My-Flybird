@@ -4,10 +4,17 @@ namespace MyFlyBird
 {
     public class RespawnFruits : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _fruits;
-        [HideInInspector] public Transform _startPoint;
-        [SerializeField] private float _timeBetweenShots;
-        [SerializeField] private float _startTimeShoot;
+        [SerializeField] 
+        private GameObject[] _fruits;
+       
+        [HideInInspector] 
+        public Transform _startPoint;
+     
+        [SerializeField] 
+        private float _timeBetweenShots;
+      
+        [SerializeField] 
+        private float _startTimeShoot;
 
         private void Start()
         {

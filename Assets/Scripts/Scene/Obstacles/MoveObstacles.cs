@@ -7,8 +7,11 @@ namespace MyFlyBird
     {
         private Rigidbody2D _rbObstacles;
 
-        [Space, SerializeField, Range(0f ,10f)] private float _moveSpeedObstacles;
-        [SerializeField] private float _timeToDestroy = 25f;
+        [Space, SerializeField, Range(0f ,10f)] 
+        private float _moveSpeedObstacles;
+        
+        [SerializeField] 
+        private float _timeToDestroy = 25f;
 
         private void Start()
         {

@@ -6,10 +6,14 @@ namespace MyFlyBird
 {
     public class UIManager : MonoBehaviour, IEventAssistant
     {
-        [SerializeField] private GameObject _mainMenu;
-        [SerializeField] private GameObject _menuChooseDifficulty;
-        [SerializeField] private GameObject _menuChoosePerson;
-        private int _chooseAvatar;
+        [SerializeField] 
+        private GameObject _mainMenu;
+        
+        [SerializeField] 
+        private GameObject _menuChooseDifficulty;
+        
+        [SerializeField] 
+        private GameObject _menuChoosePerson;
 
         public void ChoosePerson()
         {

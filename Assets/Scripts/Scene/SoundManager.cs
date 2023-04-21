@@ -5,9 +5,14 @@ namespace MyFlyBird
 {
     public class SoundManager : MonoBehaviour, IEventAssistant
     {
-        [SerializeField] private AudioSource _audioSourceLoseGame;
-        [SerializeField] private AudioSource _audioSourceClickButton;
-        [SerializeField] private AudioSource _audioSourceBiteFruits;
+        [SerializeField] 
+        private AudioSource _audioSourceLoseGame;
+        
+        [SerializeField] 
+        private AudioSource _audioSourceClickButton;
+        
+        [SerializeField] 
+        private AudioSource _audioSourceBiteFruits;
 
         private void Start()
         {

@@ -21,7 +21,7 @@ namespace MyFlyBird
 
         private void Update()
         {
-            Jump();
+            if (Input.GetKeyDown(KeyCode.Space)) Jump();
         }
 
         private void ChooseBird()
@@ -30,9 +30,9 @@ namespace MyFlyBird
             else if (PlayerPrefs.GetInt("_chooseAvatar") == 2) _playerAvatar.sprite = _pinkBirdImage;
         }
 
-        private void Jump()
+        public void Jump()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) StartCoroutine(coroutineJump());
+            StartCoroutine(coroutineJump());
         }
 
         private IEnumerator coroutineJump()
