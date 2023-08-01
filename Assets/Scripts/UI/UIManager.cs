@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace MyFlyBird
 {
@@ -15,6 +16,9 @@ namespace MyFlyBird
         [SerializeField] 
         private GameObject _menuChoosePerson;
 
+        [SerializeField]
+        private GameObject _menuOptions;
+
         public void ChoosePerson()
         {
             IEventAssistant.SendSetButton();
@@ -28,40 +32,35 @@ namespace MyFlyBird
             _menuChoosePerson.SetActive(true);
         }
 
-        public void StartLevel1()
+        public void TransitionToOptions()
         {
             IEventAssistant.SendSetButton();
-            StartCoroutine(CoroutineStartLevel1());
+            StartCoroutine(CoroutineTransitionToOptions());
         }
 
-        private IEnumerator CoroutineStartLevel1()
+        private IEnumerator CoroutineTransitionToOptions()
         {
             yield return new WaitForSeconds(0.2f);
-            SceneManager.LoadScene("Level 1");
+            _mainMenu.SetActive(false);
+            _menuOptions.SetActive(true);
         }
 
-        public void StartLevel2()
+        public void StartLevel(int level)
         {
             IEventAssistant.SendSetButton();
-            StartCoroutine(CoroutineStartLevel2());
+            StartCoroutine(CoroutineStartLevel1(level));
         }
 
-        private IEnumerator CoroutineStartLevel2()
+        private IEnumerator CoroutineStartLevel1(int level)
         {
             yield return new WaitForSeconds(0.2f);
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene(level);
         }
 
-        public void StartLevel3()
-        {
-            IEventAssistant.SendSetButton();
-            StartCoroutine(CoroutineStartLevel3());
-        }
-
-        private IEnumerator CoroutineStartLevel3()
+        public IEnumerator CoroutineStartLevel3(int level)
         {
             yield return new WaitForSeconds(0.2f);
-            SceneManager.LoadScene("Level 3");
+            SceneManager.LoadScene(level);
         }
 
         public void BackToMainMenu()
@@ -75,6 +74,7 @@ namespace MyFlyBird
             yield return new WaitForSeconds(0.2f);
             _mainMenu.SetActive(true);
             _menuChoosePerson.SetActive(false);
+            _menuOptions.SetActive(false);
             _menuChooseDifficulty.SetActive(false);
         }
 
@@ -113,7 +113,11 @@ namespace MyFlyBird
             yield return new WaitForSeconds(0.2f);
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBGL
+            Application.Quit();
 #elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
+            Application.Quit();
+#elif UNITY_ANDROID
             Application.Quit();
 #endif
         }

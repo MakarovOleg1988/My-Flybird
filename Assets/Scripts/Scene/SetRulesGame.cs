@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 namespace MyFlyBird
 {
@@ -23,11 +23,15 @@ namespace MyFlyBird
         [SerializeField]
         private RectTransform _rectTransformFruits;
 
+        private GameObject _buttonJump, BackToMainMenu;
+
         private int _valueFruits;
         private float m_XAxis, m_YAxis;
 
         private void Awake()
         {
+            _buttonJump = GameObject.Find("Jump");
+            BackToMainMenu = GameObject.Find("Back to Main Menu");
             _player = GameObject.FindGameObjectWithTag("Player");
         }
 
@@ -39,6 +43,16 @@ namespace MyFlyBird
             IEventAssistant._onSetDamage += LoseLevel;
             IEventAssistant._onSetFruits += GetFruits;
             IEventAssistant._onSetHoldOut += WinLevel;
+
+#if UNITY_EDITOR
+            _buttonJump.SetActive(false);
+#elif UNITY_WEBGL
+            _buttonJump.SetActive(false);
+#elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
+            _buttonJump.SetActive(false);
+#elif UNITY_ANDROID
+            _buttonJump.SetActive(true);
+#endif
         }
 
         private void GetFruits()
@@ -63,6 +77,8 @@ namespace MyFlyBird
             _rectTransformFruits.anchoredPosition = new Vector2(m_XAxis, m_YAxis);
             _winMenu.SetActive(true);
             _player.SetActive(false);
+            _buttonJump.SetActive(false);
+            BackToMainMenu.SetActive(false);
             yield return new WaitForSeconds(2f);
         }
 
@@ -75,6 +91,8 @@ namespace MyFlyBird
         {
             _player.SetActive(false);
             _loseMenu.SetActive(true);
+            _buttonJump.SetActive(false);
+            BackToMainMenu.SetActive(false);
 
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("Main Menu");
